@@ -17,7 +17,7 @@
       info: [32, 'Female', 'Married']
     });
     const updateMe = computed(() => {
-      return me.info.length > 0 ? "Yes" : "No"
+      return me.info.length > 0 ? "Yes" : "No" //getter
     });
     </script>
 
@@ -27,3 +27,4 @@
     </template>
   </code>
 </pre>
+> 해석: updateMe()는 여러번 재사용 가능하고, 변수 me의 값이 변하지 않는 이상 updateMe()는 이미 계산된(실행된) 값을 동일하게 반환한다
