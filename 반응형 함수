@@ -1,5 +1,7 @@
+반응형 함수
+=============
 * Composition API
-* 반응형 함수 ref
+### 반응형 함수 ref
 사용법:
 -  import { ref } from "vue";
 -  변수 선언 후 값을 ref로 감싸기
@@ -8,7 +10,7 @@
     ex: const updateName = () => {
           name.value = "Shuan";
         };
-* 반응형 함수 reactive
+### 반응형 함수 reactive
 사용법:
 -  import { reactive } from "vue";
 -  변수 선언 후 값을 reactive로 감싸기
@@ -20,10 +22,10 @@
           name.id = 2;
         });
 
-* ref 와 reactive의 차이점
+### ref 와 reactive의 차이점
 -  타입제한:
     ref: string, number, object 등 어디에도 OK
     reactive: object, array, map, set 에서만 OK
--  접근방식:
+-  접근방식(template에서 사용 시):
     ref: .value로 값 변경 가능
     reactive: .value 붙일 필요 없음
