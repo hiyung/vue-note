@@ -3,7 +3,7 @@
 * Composition API
 
 ### watch()
-사용법:
+* 사용법:
 -  import { watch } from "vue";
 -  상태 변경에 대한 반응을 보여줘야 할 때(DOM 변경, 비동기 작업의 결과 등) 사용한다
 -  반응형 객체, 함수, 배열 등 인자에 다양하게 사용할 수 있으나, **반응형 속성은 사용할 수 없으므로 getter함수를 대신하여 사용**한다.
@@ -19,4 +19,20 @@
     </script>
   </code>
 </pre>
+
+* 옵션:
+-  immediate: true : 감시 대상의 변화 없이 초기 렌더링 시점 호출 여부 설정하는 옵션
+-  deep: true : 중첩된 변경을 감시할지 여부를 설정하는 옵
+-  flush: pre/post/sync : DOM이 모두 렌더링 된 이후의 시점에서 감시 대상의 변화를 감지하기 위한 옵션
+  + pre(기본): 렌더링 전에 콜백 호출
+  + post: 렌더링이 끝날 때까지 콜백을 연기
+  + sync: 값이 변경되는 즉시 콜백 호출(동기적) (비효율적)
+> const data = ref( {count: 0} );
+watch ( () => {
+ data: {
+  immediate: true,
+  deep: true,
+  flush: post
+  handler(newVal) { console.log('변경이 감지됨, vale, newVal) }
+});
     
