@@ -1,24 +1,26 @@
 반응형 함수
 =============
-* Composition API
+(Composition API)
 
-### ref()
-사용법:
--  import { ref } from "vue";
--  변수 선언 후 값을 ref로 감싸기
-> ex: const name = ref("Hee Young");
--  변수 값 변경 시 .value에 변경할 값 넣기
-> ex: const updateName = () => {name.value = "Shuan";};
+### #ref()
+* 사용법:
+<pre><code>import { ref } from "vue";</code></pre>
+* 변수 선언 후 값을 ref로 감싸기
+* 변수 값 변경 시 .value에 변경할 값 넣기
+> (ex)  
+> const name = ref("Hee Young");  
+> const updateName = () => {name.value = "Shuan";};
 
-### reactive()
-사용법:
--  import { reactive } from "vue";
+### #reactive()
+* 사용법:
+<pre><code>import { reactive } from "vue";</code></pre>
 -  변수 선언 후 값을 reactive로 감싸기
-> ex: const name = reactive({id: 1, //속성(property)});
 -  변수 내부 속성 값 변경 시 .property에 변경할 값 넣기
-> ex: const updateName = () => {name.id = 2;});
+> (ex)  
+> const name = reactive({id: 1, //속성(property)});
+> const updateName = () => {name.id = 2;});
 
-### ref 와 reactive의 차이점
+### $ref 와 reactive의 차이점
 * 타입제한:
   - ref: string, number, object 등 어디에도 OK
   - reactive: object, array, map, set 에서만 OK
